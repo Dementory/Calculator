@@ -14,7 +14,7 @@ namespace Calculator.Presentation
         [SerializeField] private TMP_Text _historyText;
         [SerializeField] private Button _resultButton;
 
-        private CalculatorPresenter _calculatorPresenter;
+        private ICalculatorPresenter _calculatorPresenter;
 
         private const string ERROR_MESSAGE = "ERROR";
 

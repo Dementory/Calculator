@@ -6,5 +6,7 @@ namespace Calculator.Data
         public string GetActiveExpression();
 
         public void SetActiveExpression(string expression);
+
+        public void LoadData();
     }
 }

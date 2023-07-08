@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft.Json;
-
 namespace Calculator.Data
 {
 
@@ -10,11 +9,6 @@ namespace Calculator.Data
         private List<ExpressionModel> _history = new List<ExpressionModel>();
 
         private const string HISTORY_DATA_KEY = "History";
-
-        public HistoryRepository()
-        {
-            _history = LoadHistory();
-        }
 
         public IEnumerable<ExpressionModel> GetHistory()
         {
@@ -35,14 +29,14 @@ namespace Calculator.Data
             PlayerPrefs.Save();
         }
 
-        private List<ExpressionModel> LoadHistory()
+        public void LoadData()
         {
             string serializedHistory = PlayerPrefs.GetString(HISTORY_DATA_KEY, "");
 
             List<ExpressionModel> history = JsonConvert.DeserializeObject<List<ExpressionModel>>(serializedHistory);
             history ??= new List<ExpressionModel>();
 
-            return history;
+            _history = history;
         }
     }
 }

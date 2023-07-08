@@ -8,6 +8,8 @@ namespace Calculator.Data
         public IEnumerable<ExpressionModel> GetHistory();
 
         public void AddHistory(ExpressionModel history);
+
+        public void LoadData();
     }
 
 }

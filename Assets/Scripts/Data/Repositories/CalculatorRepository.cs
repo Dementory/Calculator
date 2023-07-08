@@ -15,6 +15,12 @@ namespace Calculator.Data
             _activeExpressionRepository = new ActiveExpressionRepository();
         }
 
+        public void LoadData()
+        {
+            _historyRepository.LoadData();
+            _activeExpressionRepository.LoadData();
+        }
+
         public List<ExpressionModel> GetHistory()
         {
             return _historyRepository.GetHistory().ToList();

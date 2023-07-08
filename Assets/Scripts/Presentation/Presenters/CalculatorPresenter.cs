@@ -4,7 +4,7 @@ using Calculator.Domain;
 namespace Calculator.Presentation
 {
 
-    public class CalculatorPresenter
+    public class CalculatorPresenter : ICalculatorPresenter
     {
         private ICalculatorView _view;
         private ICalculatorRepository _calculatorRepository;
@@ -16,6 +16,7 @@ namespace Calculator.Presentation
             _calculatorRepository = new CalculatorRepository();
             _expressionParser = new AdditionExpressionParser();
 
+            _calculatorRepository.LoadData();
             UpdateView();
         }
 

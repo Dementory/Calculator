@@ -8,11 +8,6 @@ namespace Calculator.Data
         private string _activeExpression;
         private const string ACTIVE_EXPRESSION_DATA_KEY = "CurrentExpression";
 
-        public ActiveExpressionRepository()
-        {
-            _activeExpression = LoadActiveExpression();
-        }
-
         public string GetActiveExpression()
         {
             return _activeExpression;
@@ -30,9 +25,9 @@ namespace Calculator.Data
             PlayerPrefs.Save();
         }
 
-        private string LoadActiveExpression()
+        public void LoadData()
         {
-            return PlayerPrefs.GetString(ACTIVE_EXPRESSION_DATA_KEY, "");
+            _activeExpression = PlayerPrefs.GetString(ACTIVE_EXPRESSION_DATA_KEY, "");
         }
     }
 }
